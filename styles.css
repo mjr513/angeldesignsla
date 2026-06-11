@@ -1143,3 +1143,136 @@ p {
     grid-template-columns: 1fr;
   }
 }
+.youtube-thumb {
+  position: relative;
+  display: block;
+  min-height: 280px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #111;
+}
+
+.youtube-thumb img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.youtube-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(255, 45, 85, 0.18), transparent 35%),
+    linear-gradient(180deg, rgba(5, 7, 13, 0.05), rgba(5, 7, 13, 0.55));
+  pointer-events: none;
+}
+
+.youtube-thumb:hover img {
+  transform: scale(1.04);
+  opacity: 0.82;
+}
+
+.youtube-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 76px;
+  height: 76px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--violet));
+  box-shadow: 0 0 45px rgba(255, 45, 85, 0.34);
+  transform: translate(-50%, -50%);
+}
+
+.youtube-play-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  border-left: 18px solid #fff;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  transform: translate(-50%, -50%);
+}
+
+.youtube-label {
+  position: absolute;
+  left: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 2;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.previous-card-body a {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 0.9rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.previous-card-body a:hover {
+  color: var(--cyan);
+  transform: translateX(3px);
+}
+.previous-website-preview {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(48, 213, 255, 0.2), transparent 26%),
+    radial-gradient(circle at 80% 85%, rgba(255, 45, 85, 0.2), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+}
+
+.previous-website-preview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, black, transparent 95%);
+}
+
+.previous-website-preview > * {
+  position: relative;
+  z-index: 1;
+}
+
+.previous-website-preview:hover .preview-content {
+  transform: translateY(-4px);
+  border-color: rgba(48, 213, 255, 0.32);
+}
+
+.previous-website-preview .preview-content {
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.website-label {
+  position: absolute;
+  left: 1.1rem;
+  bottom: 1.1rem;
+  z-index: 2;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
